@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Игра Шашки</title>
+<link rel="stylesheet" href="style.css"/>
+<script type="text/javascript" src="model.js"></script>
+</head>
+<body bgcolor="white">
+
+<h1>Шашки</h1>
+
+<script language="JavaScript">
+<!--
+version = 1.0;
+// -->
+</script>
+<script language="JavaScript1.1">
+<!--
+version = 1.1;
+// -->
+</script>
+<script language="JavaScript">
+<!--
+if (version==1.0)
+ document.write("Your browser doesn't have JavaScript 1.1 capabilities. "
+  + "This checkers game script only works on Netscape 3+ and MSIE 4+.");
+// -->
+</script>
+<script language="JavaScript1.1">
+<!--
+// Checkers Game
+
+// black.gif
+// gray.gif
+// you1.gif -- normal piece (player/red)
+// you2.gif -- highlighted piece
+// you1k.gif -- kinged normal piece
+// you2k.gif -- kinged highlighted piece
+// me1.gif -- normal piece (computer/black)
+// me2.gif -- highlighted piece
+// me1k.gif -- kinged normal piece
+// me2k.gif -- kinged highlighted piece
+
+
+
+document.write("<table width="+(square_dim*8+8)
+ +"<tr><td><img src='black.gif' width="+(square_dim*8+8)
+ +" height=4><br></td></tr>");
+for(var j=0;j<8;j++) {
+ document.write("<tr><td><img src='black.gif' width=4 height="+square_dim+">");
+ for(var i=0;i<8;i++) {
+  if (moveable_space(i,j))
+   document.write("<a href='javascript:clicked("+i+","+j+")'>");
+  document.write("<img src='");
+  if (board[i][j]==1) document.write("you1.gif");
+  else if (board[i][j]==-1) document.write("me1.gif");
+  else if (moveable_space(i,j)) document.write("gray.gif");
+  else document.write("black.gif");
+  document.write("' width="+square_dim+" height="+square_dim
+   +" name='space"+i+""+j+"' border=0>");
+  if (moveable_space(i,j)) document.write("</a>");
+ }
+ document.write("<img src='black.gif' width=4 height="+square_dim+"></td></tr>");
+}
+document.write("<tr><td><img src='black.gif' width="+(square_dim*8+8)
+ +" height=4><br></td></tr></table><br>"
+ +"<form name='disp'><textarea name='message' wrap=virtual  ></textarea><br></form>");
+
+
+//my_turn = true;
+
+// -->
+</script>
+</body></html>
